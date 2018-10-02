@@ -278,11 +278,10 @@ function range(start, end, step){
     }
     return range;
 }
-console.log(range(1, 10));
+/* console.log(range(1, 10));
 console.log(range(5, 2, -1));
 console.log(sum(range(1, 10)));
-console.log(range(5,2));
-console.log("HELP!");
+console.log(range(5,2)); */
 function sum(range){
     var total = 0;
     for(var i = 0; i < range.length; i++){
@@ -290,4 +289,51 @@ function sum(range){
     }
     return total;
 }
-console.log(sum(range(1,10,2))); 
+//console.log(sum(range(1,10,2)));
+ /**
+ *      2. For this exercise, write two functions, reverseArray and reverseArrayInPlace. The first, reverseArray, takes an array 
+ *      as argument and produces a new array that has the same elements in the inverse order. The second, reverseArrayInPlace,
+ *      does whatthereverse method does: it modifies the array given as argument by reversing its elements. Neither may use the
+ *      standard reverse method.
+ */
+function reverseArray(arr){
+    var newArray = [];
+    arr.forEach(function(element){
+       newArray.unshift(element);
+    });
+    return newArray;
+}
+function reverseArrayInPlace(arrayValue){
+    var temp =[];
+   for(var i = 0; i<arrayValue.length;i++){
+        temp.unshift(arrayValue[i]);
+    };
+    arrayValue = temp;
+    return arrayValue;
+}
+//console.log(reverseArray(["A", "B", "C"]));
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+//console.log(reverseArrayInPlace(arrayValue));
+
+/* 
+3. Write a function arrayToList that builds up a list structure like the one shown when given [1, 2, 3] as argument. Also write a listToArray function that produces an array from a list. Then add a helper function prepend, which takes an element and a list and creates a new list that adds the element to the front of the input list, and nth, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) or undefined when there is no such element.
+
+If you haven’t already, also write a recursive version of nth. */
+/* function arrayToList(arr){
+    for(var i = 0; i < arr.length; i++){
+        
+    }
+}
+console.log(arrayToList([10, 20]));
+// → {value: 10, rest: {value: 20, rest: null}}
+console.log(listToArray(arrayToList([10, 20, 30])));
+// → [10, 20, 30]
+console.log(prepend(10, prepend(20, null)));
+// → {value: 10, rest: {value: 20, rest: null}}
+console.log(nth(arrayToList([10, 20, 30]), 1));
+// → 20 */
+
+/**
+ * Chapter 5: Higher-Order Functions
+ */
